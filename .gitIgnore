@@ -1,0 +1,6 @@
+#ignorar Doc
+
+ProyectoMYS1Final\bin\Debug\finla\*
+ProyectoMYS1Final\bin\Debug\*.dll
+ProyectoMYS1Final\bin\Debug\*.exe
+
