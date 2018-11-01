@@ -59,6 +59,8 @@ namespace ProyectoMYS1Final.SIMIO
             return createObject("Source", name, x, y, z);
         }
 
+        
+
         public IIntelligentObject createSink(String name, int x, int y, int z)
         {
             return createObject("Sink", name, x, y, z);
@@ -101,6 +103,31 @@ namespace ProyectoMYS1Final.SIMIO
         public  void addFailure(IIntelligentObject _object, String nameFail) {
             _object.Properties["FailureType"].Value = nameFail;
         }
+        public void addCountBetweenFailures(IIntelligentObject _object, string v)
+        {
+            _object.Properties["CountBetweenFailures"].Value = v;
+        }
+        public void addTimeToRepai(IIntelligentObject _object, string v)
+        {
+            double timeHour = Int32.Parse(v);
+            double timeMinutes = timeHour / 60;
+
+            string decim = timeMinutes + "";
+            _object.Properties["TimeToRepair"].Value = decim.Replace(',','.');
+        }
+        public void addProcessingTime(IIntelligentObject _object, string v)
+        {
+            _object.Properties["ProcessingTime"].Value = v;
+        }
+        public void addMembertransferIntime(IIntelligentObject _object, string v)
+        {
+            _object.Properties["MemberTransferInTime"].Value = v;
+        }
+        public void addInitialCapasity(IIntelligentObject _object, string v)
+        {
+            _object.Properties["InitialCapacity"].Value = v;
+        }
+
 
     }
 }

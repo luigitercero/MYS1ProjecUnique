@@ -41,7 +41,6 @@ namespace ProyectoMYS1Final.SIMIO
         }
         private void createAirPort(String[] line, INodeObject airplane, INodeObject person)
         {
-
             IIntelligentObject _object = simio.createCombiner(line[1], Int16.Parse(line[2]), Int16.Parse(line[3]), Int16.Parse(line[4]));
             this.ariport.Add(Int16.Parse(line[0]),_object);
             INodeObject parent = this.simio.getParentIpunt(_object);
@@ -49,16 +48,13 @@ namespace ProyectoMYS1Final.SIMIO
             simio.addConnector(airplane, parent, null);
             simio.addConnector(person, member, null);
             simio.addFailure(_object, line[5]);
-            
-
+            simio.addCountBetweenFailures(_object, line[6]);
+            simio.addTimeToRepai(_object, line[7]);
+            simio.addInitialCapasity(_object, line[8]);
+            simio.addMembertransferIntime(_object, line[9]);
+            simio.addProcessingTime(_object, line[10]);
         }
-        private void createBase(INodeObject airplaneOutput, INodeObject personOutput) {
-            IIntelligentObject airplane = simio.createSource("airplane", 0, 0, 0);
-            IIntelligentObject person = simio.createSource("person", 2, 0, 0);
-            airplaneOutput = simio.getNodeOutput(airplane);
-            personOutput = simio.getNodeOutput(person);
-            simio.createSink("salida", 1, 1, 1);
-        }
+      
 
        
     }
