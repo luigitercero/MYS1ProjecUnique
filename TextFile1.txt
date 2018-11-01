@@ -1,0 +1,891 @@
+﻿/**********************************************
+SOURCE
+/**********************************************
+0 - ReportStatistics;
+;
+1 - ParentCostCenter;
+;
+2 - InitialCost;
+;
+3 - InitialCostRate;
+;
+4 - ResourceIdleCostRate;
+;
+5 - ResourceCostPerUse;
+;
+6 - ResourceUsageCostRate;
+;
+7 - LogResourceUsage;
+;
+8 - DisplayName;
+;
+9 - DisplayCategory;
+;
+10 - DisplayColor;
+;
+11 - IncludeInPlanResourceConstraints;
+;
+12 - CapacityType;
+;
+13 - WorkSchedule;
+;
+14 - WorkDayExceptions;
+;
+15 - WorkPeriodExceptions;
+;
+16 - InitialCapacity;
+;
+17 - RankingRule;
+;
+18 - RankingExpression;
+;
+19 - DynamicSelectionRule;
+;
+20 - CurrentSizeIndex;
+;
+21 - TransferInConstraintsType;
+;
+22 - TransferInCondition;
+;
+23 - TransferOutConstraintsType;
+;
+24 - TransferOutCondition;
+;
+25 - ExpectedSetupTimeExpression;
+;
+26 - ExpectedOperationTimeExpression;
+;
+27 - EntityType;
+;
+28 - ArrivalMode;
+;
+29 - TimeOffset;
+;
+30 - InterarrivalTime;
+;
+31 - RateTable;
+;
+32 - RateScaleFactor;
+;
+33 - InitialNumberEntities;
+;
+34 - TriggeringEventName;
+;
+35 - TriggeringEventCount;
+;
+36 - ArrivalTimeProperty;
+;
+37 - ArrivalEventsPerTimeSlot;
+;
+38 - ArrivalTimeDeviation;
+;
+39 - ArrivalNoShowProbability;
+;
+40 - EntitiesPerArrival;
+;
+41 - RepeatArrivalPattern;
+;
+42 - EntityArrivalsRandomNumberStream;
+;
+43 - MaximumArrivals;
+;
+44 - MaximumTime;
+;
+45 - StopEventName;
+;
+46 - OutputBufferCapacity;
+;
+47 - OutputBufferBalkDecisionType;
+;
+48 - OutputBufferBalkConditionOrProbability;
+;
+49 - OutputBufferBalkNodeName;
+;
+50 - OutputBufferRenegeTriggers;
+;
+51 - AssignmentsBeforeExiting;
+;
+52 - AssignmentsOnBalking;
+;
+53 - AssignmentsOnReneging;
+;
+54 - TableRowReferenceBeforeCreatingEntitiesActionType;
+;
+55 - TableRowReferenceBeforeCreatingEntitiesTableName;
+;
+56 - TableRowReferenceBeforeCreatingEntitiesRowNumber;
+;
+57 - TableRowReferenceOnCreatedEntityActionType;
+;
+58 - TableRowReferenceOnCreatedEntityTableName;
+;
+59 - TableRowReferenceOnCreatedEntityRowNumber;
+;
+60 - RunInitializedAddOnProcess;
+;
+61 - RunEndingAddOnProcess;
+;
+62 - CreatingEntitiesAddOnProcess;
+;
+63 - CreatedEntityAddOnProcess;
+;
+64 - ExitedAddOnProcess;
+;
+65 - CapitalCost;
+;
+66 - OutputBufferCostPerUse;
+;
+67 - OutputBufferHoldingCostRate;
+
+
+/**********************************************
+SERVER
+/**********************************************
+
+0 - ReportStatistics;
+;
+1 - ParentCostCenter;
+;
+2 - InitialCost;
+;
+3 - InitialCostRate;
+;
+4 - ResourceIdleCostRate;
+;
+5 - ResourceCostPerUse;
+;
+6 - ResourceUsageCostRate;
+;
+7 - LogResourceUsage;
+;
+8 - DisplayName;
+;
+9 - DisplayCategory;
+;
+10 - DisplayColor;
+;
+11 - IncludeInPlanResourceConstraints;
+;
+12 - CapacityType;
+;
+13 - WorkSchedule;
+;
+14 - WorkDayExceptions;
+;
+15 - WorkPeriodExceptions;
+;
+16 - InitialCapacity;
+;
+17 - RankingRule;
+;
+18 - RankingExpression;
+;
+19 - DynamicSelectionRule;
+;
+20 - CurrentSizeIndex;
+;
+21 - TransferInConstraintsType;
+;
+22 - TransferInCondition;
+;
+23 - TransferOutConstraintsType;
+;
+24 - TransferOutCondition;
+;
+25 - ExpectedSetupTimeExpression;
+;
+26 - ExpectedOperationTimeExpression;
+;
+27 - TransferInTime;
+;
+28 - ProcessType;
+;
+29 - ProcessingTime;
+;
+30 - ProcessingTasks;
+;
+31 - OffShiftRule;
+;
+32 - ProcessingTaskPrecedenceMethod;
+;
+33 - ProcessingTaskResourcesReferencedTableName;
+;
+34 - ProcessingTaskMaterialsReferencedTableName;
+;
+35 - ProcessingTaskSequenceRandomNumberStream;
+;
+36 - InputBufferCapacity;
+;
+37 - InputBufferBalkDecisionType;
+;
+38 - InputBufferBalkConditionOrProbability;
+;
+39 - InputBufferBalkNodeName;
+;
+40 - InputBufferRenegeTriggers;
+;
+41 - OutputBufferCapacity;
+;
+42 - OutputBufferBalkDecisionType;
+;
+43 - OutputBufferBalkConditionOrProbability;
+;
+44 - OutputBufferBalkNodeName;
+;
+45 - OutputBufferRenegeTriggers;
+;
+46 - FailureType;
+;
+47 - FailureEventName;
+;
+48 - CountBetweenFailures;
+;
+49 - UptimeBetweenFailures;
+;
+50 - TimeToRepair;
+;
+51 - TableRowReferenceBeforeProcessingActionType;
+;
+52 - TableRowReferenceBeforeProcessingTableName;
+;
+53 - TableRowReferenceBeforeProcessingRowNumber;
+;
+54 - AssignmentsOnEntering;
+;
+55 - AssignmentsBeforeProcessing;
+;
+56 - AssignmentsAfterProcessing;
+;
+57 - AssignmentsBeforeExiting;
+;
+58 - AssignmentsOnBalking;
+;
+59 - AssignmentsOnReneging;
+;
+60 - SecondaryResourceForProcessingObjectType;
+;
+61 - SecondaryResourceForProcessingObjectName;
+;
+62 - SecondaryResourceForProcessingObjectListName;
+;
+63 - SecondaryResourceForProcessingSelectionGoal;
+;
+64 - SecondaryResourceForProcessingSelectionExpression;
+;
+65 - SecondaryResourceForProcessingRequestMove;
+;
+66 - SecondaryResourceForProcessingDestinationNode;
+;
+67 - SecondaryResourceForProcessingSelectionCondition;
+;
+68 - SecondaryResourceForProcessingOffShiftRule;
+;
+69 - SecondaryResourceForProcessingKeepReservedCondition;
+;
+70 - SecondaryResourceForProcessingReservationTimeout;
+;
+71 - SecondaryResourceSeizesOnEntering;
+;
+72 - SecondaryResourceSeizesOnEnteringMustSimultaneouslySeize;
+;
+73 - SecondaryResourceSeizesBeforeProcessing;
+;
+74 - SecondaryResourceSeizesBeforeProcessingMustSimultaneouslySeize;
+;
+75 - SecondaryResourceSeizesAfterProcessing;
+;
+76 - SecondaryResourceSeizesAfterProcessingMustSimultaneouslySeize;
+;
+77 - SecondaryResourceReleasesOnEntering;
+;
+78 - SecondaryResourceReleasesBeforeProcessing;
+;
+79 - SecondaryResourceReleasesAfterProcessing;
+;
+80 - RunInitializedAddOnProcess;
+;
+81 - RunEndingAddOnProcess;
+;
+82 - EnteredAddOnProcess;
+;
+83 - BeforeProcessingAddOnProcess;
+;
+84 - ProcessingAddOnProcess;
+;
+85 - AfterProcessingAddOnProcess;
+;
+86 - ExitedAddOnProcess;
+;
+87 - FailedAddOnProcess;
+;
+88 - RepairedAddOnProcess;
+;
+89 - EvaluatingSeizeRequestAddOnProcess;
+;
+90 - OnShiftAddOnProcess;
+;
+91 - OffShiftAddOnProcess;
+;
+92 - CapitalCost;
+;
+93 - InputBufferCostPerUse;
+;
+94 - InputBufferHoldingCostRate;
+;
+95 - OutputBufferCostPerUse;
+;
+96 - OutputBufferHoldingCostRate;
+;
+97 - RepairingAddOnProcess;
+
+/**********************************************
+MODEL ENTITY
+/**********************************************
+
+0 - ReportStatistics;
+;
+1 - ParentCostCenter;
+;
+2 - InitialCost;
+;
+3 - InitialCostRate;
+;
+4 - ResourceIdleCostRate;
+;
+5 - ResourceCostPerUse;
+;
+6 - ResourceUsageCostRate;
+;
+7 - LogResourceUsage;
+;
+8 - DisplayName;
+;
+9 - DisplayCategory;
+;
+10 - DisplayColor;
+;
+11 - IncludeInPlanResourceConstraints;
+;
+12 - CapacityType;
+;
+13 - WorkSchedule;
+;
+14 - WorkDayExceptions;
+;
+15 - WorkPeriodExceptions;
+;
+16 - InitialCapacity;
+;
+17 - RankingRule;
+;
+18 - RankingExpression;
+;
+19 - DynamicSelectionRule;
+;
+20 - CurrentSizeIndex;
+;
+21 - InitialDesiredSpeed;
+;
+22 - InitialNumberInSystem;
+;
+23 - MaximumNumberInSystemLimit;
+;
+24 - Destroyable;
+;
+25 - InitialTravelMode;
+;
+26 - InitialNetwork;
+;
+27 - NetworkTurnaroundMethod;
+;
+28 - InitialPriority;
+;
+29 - InitialSequence;
+;
+30 - CanTransferInAndOutOfObjects;
+;
+31 - DueDateExpression;
+;
+32 - GanttVisibilityExpression;
+;
+33 - FreeSpaceSteeringBehavior;
+;
+34 - FreeSpaceSteeringUpdateInterval;
+;
+35 - FreeSpaceSteeringAvoidCollisions;
+
+/**********************************************
+COMBINER
+/**********************************************
+0 - ReportStatistics;
+;
+1 - ParentCostCenter;
+;
+2 - InitialCost;
+;
+3 - InitialCostRate;
+;
+4 - ResourceIdleCostRate;
+;
+5 - ResourceCostPerUse;
+;
+6 - ResourceUsageCostRate;
+;
+7 - LogResourceUsage;
+;
+8 - DisplayName;
+;
+9 - DisplayCategory;
+;
+10 - DisplayColor;
+;
+11 - IncludeInPlanResourceConstraints;
+;
+12 - CapacityType;
+;
+13 - WorkSchedule;
+;
+14 - WorkDayExceptions;
+;
+15 - WorkPeriodExceptions;
+;
+16 - InitialCapacity;
+;
+17 - RankingRule;
+;
+18 - RankingExpression;
+;
+19 - DynamicSelectionRule;
+;
+20 - CurrentSizeIndex;
+;
+21 - TransferInConstraintsType;
+;
+22 - TransferInCondition;
+;
+23 - TransferOutConstraintsType;
+;
+24 - TransferOutCondition;
+;
+25 - ExpectedSetupTimeExpression;
+;
+26 - ExpectedOperationTimeExpression;
+;
+27 - BatchQuantity;
+;
+28 - MatchingRule;
+;
+29 - ParentMatchExpression;
+;
+30 - MemberMatchExpression;
+;
+31 - ParentRankingRule;
+;
+32 - ParentRankingExpression;
+;
+33 - MemberRankingRule;
+;
+34 - MemberRankingExpression;
+;
+35 - SuspendBatchingWhenDown;
+;
+36 - ParentTransferInTime;
+;
+37 - MemberTransferInTime;
+;
+38 - ProcessType;
+;
+39 - ProcessingTime;
+;
+40 - ProcessingTasks;
+;
+41 - OffShiftRule;
+;
+42 - ProcessingTaskPrecedenceMethod;
+;
+43 - ProcessingTaskResourcesReferencedTableName;
+;
+44 - ProcessingTaskMaterialsReferencedTableName;
+;
+45 - ProcessingTaskSequenceRandomNumberStream;
+;
+46 - ParentInputBufferCapacity;
+;
+47 - ParentInputBufferBalkDecisionType;
+;
+48 - ParentInputBufferBalkConditionOrProbability;
+;
+49 - ParentInputBufferBalkNodeName;
+;
+50 - ParentInputBufferRenegeTriggers;
+;
+51 - MemberInputBufferCapacity;
+;
+52 - MemberInputBufferBalkDecisionType;
+;
+53 - MemberInputBufferBalkConditionOrProbability;
+;
+54 - MemberInputBufferBalkNodeName;
+;
+55 - MemberInputBufferRenegeTriggers;
+;
+56 - OutputBufferCapacity;
+;
+57 - OutputBufferBalkDecisionType;
+;
+58 - OutputBufferBalkConditionOrProbability;
+;
+59 - OutputBufferBalkNodeName;
+;
+60 - OutputBufferRenegeTriggers;
+;
+61 - FailureType;
+;
+62 - FailureEventName;
+;
+63 - CountBetweenFailures;
+;
+64 - UptimeBetweenFailures;
+;
+65 - TimeToRepair;
+;
+66 - TableRowReferenceBeforeProcessingActionType;
+;
+67 - TableRowReferenceBeforeProcessingTableName;
+;
+68 - TableRowReferenceBeforeProcessingRowNumber;
+;
+69 - AssignmentsOnParentEntering;
+;
+70 - AssignmentsOnMemberEntering;
+;
+71 - AssignmentsBeforeProcessing;
+;
+72 - AssignmentsAfterProcessing;
+;
+73 - AssignmentsBeforeExiting;
+;
+74 - AssignmentsOnBalking;
+;
+75 - AssignmentsOnReneging;
+;
+76 - SecondaryResourceForProcessingObjectType;
+;
+77 - SecondaryResourceForProcessingObjectName;
+;
+78 - SecondaryResourceForProcessingObjectListName;
+;
+79 - SecondaryResourceForProcessingSelectionGoal;
+;
+80 - SecondaryResourceForProcessingSelectionExpression;
+;
+81 - SecondaryResourceForProcessingRequestMove;
+;
+82 - SecondaryResourceForProcessingDestinationNode;
+;
+83 - SecondaryResourceForProcessingSelectionCondition;
+;
+84 - SecondaryResourceForProcessingOffShiftRule;
+;
+85 - SecondaryResourceForProcessingKeepReservedCondition;
+;
+86 - SecondaryResourceForProcessingReservationTimeout;
+;
+87 - SecondaryResourceSeizesOnParentEntering;
+;
+88 - SecondaryResourceSeizesOnParentEnteringMustSimultaneouslySeize;
+;
+89 - SecondaryResourceSeizesBeforeProcessing;
+;
+90 - SecondaryResourceSeizesBeforeProcessingMustSimultaneouslySeize;
+;
+91 - SecondaryResourceSeizesAfterProcessing;
+;
+92 - SecondaryResourceSeizesAfterProcessingMustSimultaneouslySeize;
+;
+93 - SecondaryResourceReleasesOnParentEntering;
+;
+94 - SecondaryResourceReleasesBeforeProcessing;
+;
+95 - SecondaryResourceReleasesAfterProcessing;
+;
+96 - RunInitializedAddOnProcess;
+;
+97 - RunEndingAddOnProcess;
+;
+98 - ParentEnteredAddOnProcess;
+;
+99 - MemberEnteredAddOnProcess;
+;
+100 - BeforeProcessingAddOnProcess;
+;
+101 - ProcessingAddOnProcess;
+;
+102 - AfterProcessingAddOnProcess;
+;
+103 - ExitedAddOnProcess;
+;
+104 - FailedAddOnProcess;
+;
+105 - RepairedAddOnProcess;
+;
+106 - EvaluatingSeizeRequestAddOnProcess;
+;
+107 - OnShiftAddOnProcess;
+;
+108 - OffShiftAddOnProcess;
+;
+109 - CapitalCost;
+;
+110 - ParentInputBufferCostPerUse;
+;
+111 - ParentInputBufferHoldingCostRate;
+;
+112 - MemberInputBufferCostPerUse;
+;
+113 - MemberInputBufferHoldingCostRate;
+;
+114 - OutputBufferCostPerUse;
+;
+115 - OutputBufferHoldingCostRate;
+;
+116 - RepairingAddOnProcess;
+
+/**********************************************
+TRANSFER NODE
+/**********************************************
+0 - ReportStatistics;
+;
+1 - ParentCostCenter;
+;
+2 - InitialCost;
+;
+3 - InitialCostRate;
+;
+4 - ResourceIdleCostRate;
+;
+5 - ResourceCostPerUse;
+;
+6 - ResourceUsageCostRate;
+;
+7 - LogResourceUsage;
+;
+8 - DisplayName;
+;
+9 - DisplayCategory;
+;
+10 - DisplayColor;
+;
+11 - IncludeInPlanResourceConstraints;
+;
+12 - CapacityType;
+;
+13 - WorkSchedule;
+;
+14 - WorkDayExceptions;
+;
+15 - WorkPeriodExceptions;
+;
+16 - InitialCapacity;
+;
+17 - RankingRule;
+;
+18 - RankingExpression;
+;
+19 - DynamicSelectionRule;
+;
+20 - CurrentSizeIndex;
+;
+21 - TransferInConstraintsType;
+;
+22 - TransferInCondition;
+;
+23 - TransferOutConstraintsType;
+;
+24 - TransferOutCondition;
+;
+25 - ExpectedSetupTimeExpression;
+;
+26 - ExpectedOperationTimeExpression;
+;
+27 - InitialTravelerCapacity;
+;
+28 - EntryRankingRule;
+;
+29 - EntryRankingExpression;
+;
+30 - EntryExemptionCondition;
+;
+31 - OutputFlowControlMode;
+;
+32 - FlowSplitAllocationRule;
+;
+33 - OutboundTravelMode;
+;
+34 - OutboundLinkPreference;
+;
+35 - OutboundLinkRule;
+;
+36 - OutboundLinkName;
+;
+37 - OutboundLinkRandomNumberStream;
+;
+38 - SequenceExpectedOperationTime;
+;
+39 - DestinationType;
+;
+40 - DestinationNodeName;
+;
+41 - DestinationNodeListName;
+;
+42 - DestinationRoutingGroupName;
+;
+43 - DestinationSelectionGoal;
+;
+44 - DestinationSelectionExpression;
+;
+45 - DestinationSelectionCondition;
+;
+46 - BlockedDestinationRule;
+;
+47 - RoutingOutRequiredMaterials;
+;
+48 - RouteRequestRankingRule;
+;
+49 - RouteRequestRankingExpression;
+;
+50 - RouteRequestDynamicSelectionRule;
+;
+51 - RideOnTransporter;
+;
+52 - TransporterType;
+;
+53 - TransporterName;
+;
+54 - TransporterListName;
+;
+55 - TransporterReservationMethod;
+;
+56 - TransporterSelectionGoal;
+;
+57 - TransporterSelectionExpression;
+;
+58 - TransporterSelectionCondition;
+;
+59 - TransporterStatusOnDropOffKeepReservedCondition;
+;
+60 - AssignmentsOnEntering;
+;
+61 - TalliesOnEntering;
+;
+62 - TalliesOnExited;
+;
+63 - RunInitializedAddOnProcess;
+;
+64 - RunEndingAddOnProcess;
+;
+65 - EnteredAddOnProcess;
+;
+66 - ExitedAddOnProcess;
+;
+67 - BoundExternalOutputNode;
+
+/**********************************************
+PARENT INPUT BUFFER
+/**********************************************
+]
+0 - ReportStatistics]
+]
+0 - ParentCostCenter]
+]
+0 - InitialCost]
+]
+0 - InitialCostRate]
+]
+0 - ResourceIdleCostRate]
+]
+0 - ResourceCostPerUse]
+]
+0 - ResourceUsageCostRate]
+]
+0 - LogResourceUsage]
+]
+0 - DisplayName]
+]
+0 - DisplayCategory]
+]
+0 - DisplayColor]
+]
+0 - IncludeInPlanResourceConstraints]
+]
+0 - CapacityType]
+]
+0 - WorkSchedule]
+]
+0 - WorkDayExceptions]
+]
+0 - WorkPeriodExceptions]
+]
+0 - InitialCapacity]
+]
+0 - RankingRule]
+]
+0 - RankingExpression]
+]
+0 - DynamicSelectionRule]
+]
+0 - CurrentSizeIndex]
+]
+0 - TransferInConstraintsType]
+]
+0 - TransferInCondition]
+]
+0 - TransferOutConstraintsType]
+]
+0 - TransferOutCondition]
+]
+0 - ExpectedSetupTimeExpression]
+]
+0 - ExpectedOperationTimeExpression]
+]
+0 - InitialTravelerCapacity]
+]
+0 - EntryRankingRule]
+]
+0 - EntryRankingExpression]
+]
+0 - EntryExemptionCondition]
+]
+0 - OutputFlowControlMode]
+]
+0 - FlowSplitAllocationRule]
+]
+0 - OutboundTravelMode]
+]
+0 - OutboundLinkPreference]
+]
+0 - OutboundLinkRule]
+]
+0 - OutboundLinkName]
+]
+0 - OutboundLinkRandomNumberStream]
+]
+0 - SequenceExpectedOperationTime]
+]
+0 - AssignmentsOnEntering]
+]
+0 - TalliesOnEntering]
+]
+0 - TalliesOnExited]
+]
+0 - RunInitializedAddOnProcess]
+]
+0 - RunEndingAddOnProcess]
+]
+0 - EnteredAddOnProcess]
+]
+0 - ExitedAddOnProcess]
+]
+0 - BoundExternalOutputNode]
+]
+
