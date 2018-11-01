@@ -25,7 +25,12 @@ namespace ProyectoMYS1Final.SIMIO
             read = new ReadCsv(filePath,',');
             string[] line = read.getline();
             line = read.getline();
-            createBase(airplaneOutput, personOutput);
+            
+            IIntelligentObject airplane = simio.createSource("airplane", 0, 0, 0);
+            IIntelligentObject person = simio.createSource("person", 2, 0, 0);
+            airplaneOutput = simio.getNodeOutput(airplane);
+            personOutput = simio.getNodeOutput(person);
+            simio.createSink("salida", 1, 1, 1);
 
             while (line != null) {
                 createAirPort(line, airplaneOutput, personOutput);
