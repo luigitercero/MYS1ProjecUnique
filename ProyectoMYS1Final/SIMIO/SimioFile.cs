@@ -49,6 +49,11 @@ namespace ProyectoMYS1Final.SIMIO
             return createObject("Combiner", name, x, y, z);
         }
 
+        internal IIntelligentObject addConnector(INodeObject airplane, INodeObject parent, object p)
+        {
+            return this.getObjectList().CreateLink("Connector", airplane, parent, null);
+        }
+
         public IIntelligentObject createSource(String name, int x, int y, int z)
         {
             return createObject("Source", name, x, y, z);
@@ -91,6 +96,10 @@ namespace ProyectoMYS1Final.SIMIO
         public IIntelligentObjects getObjectList() {
             IIntelligentObjects list = model.Facility.IntelligentObjects;
             return list;
+        }
+
+        public  void addFailure(IIntelligentObject _object, String nameFail) {
+            _object.Properties["FailureType"].Value = nameFail;
         }
 
     }

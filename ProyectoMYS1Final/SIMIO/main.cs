@@ -20,16 +20,13 @@ namespace ProyectoMYS1Final.SIMIO
 
         internal void start(string filePath)
         {
+            INodeObject airplaneOutput = null; INodeObject personOutput = null;
             simio = new SimioFile();
             read = new ReadCsv(filePath,',');
             string[] line = read.getline();
             line = read.getline();
-            IIntelligentObject airplane = simio.createSource("airplane", 0, 0, 0);
-            IIntelligentObject person = simio.createSource("person", 2, 0, 0);
-            INodeObject airplaneOutput = simio.getNodeOutput(airplane);
-            INodeObject personOutput = simio.getNodeOutput(person);
+            createBase(airplaneOutput, personOutput);
 
-            simio.createSink("salida", 1, 1, 1);
             while (line != null) {
                 createAirPort(line, airplaneOutput, personOutput);
                 line = read.getline();
@@ -44,11 +41,22 @@ namespace ProyectoMYS1Final.SIMIO
             this.ariport.Add(Int16.Parse(line[0]),_object);
             INodeObject parent = this.simio.getParentIpunt(_object);
             INodeObject member = this.simio.getMemberIpunt(_object);
-          
-            IIntelligentObject connect1 = this.simio.getObjectList().CreateLink("Connector",airplane, parent, null);
-            IIntelligentObject connect2 = this.simio.getObjectList().CreateLink("Connector",  person, member, null);
+            IIntelligentObject connect1 = simio.addConnector(airplane, parent, null);
+            IIntelligentObject connect2 = simio.addConnector(airplane, parent, null);
+
+            simio.addFailure(_object, line[5]);
+            
 
         }
+        private void createBase(INodeObject airplaneOutput, INodeObject personOutput) {
+            IIntelligentObject airplane = simio.createSource("airplane", 0, 0, 0);
+            IIntelligentObject person = simio.createSource("person", 2, 0, 0);
+             airplaneOutput = simio.getNodeOutput(airplane);
+             personOutput = simio.getNodeOutput(person);
+            simio.createSink("salida", 1, 1, 1);
+        }
+
+       
     }
 
    
