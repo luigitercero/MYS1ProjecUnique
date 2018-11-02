@@ -80,6 +80,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CSVview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CSVview.Designer.cs">
+      <DependentUpon>CSVview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     <Compile Include="SIMIO\Readxlsx.cs" />
     <Compile Include="SIMIO\SimioFile.cs" />
     <Compile Include="SIMIO\ReadCsv.cs" />
+    <EmbeddedResource Include="CSVview.resx">
+      <DependentUpon>CSVview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
