@@ -46,7 +46,9 @@ namespace ProyectoMYS1Final.SIMIO
 
         public IIntelligentObject createCombiner(String name, int x, int y, int z)
         {
-            return createObject("Combiner", name, x, y, z);
+            IIntelligentObject combiner = createObject("Combiner", name, x, y, z);
+            combiner.Properties["ExitedAddOnProcess"].Value = "EscribirBitacora";
+            return combiner;
         }
 
         internal IIntelligentObject addConnector(INodeObject airplane, INodeObject parent, object p)
@@ -56,7 +58,10 @@ namespace ProyectoMYS1Final.SIMIO
 
         public IIntelligentObject createSource(String name, int x, int y, int z)
         {
-            return createObject("Source", name, x, y, z);
+            IIntelligentObject source = createObject("Source", name, x, y, z);
+            if(name.Equals("person"))
+                source.Properties["ExitedAddOnProcess"].Value = "CrearPersonas";
+            return source;
         }
 
         public IIntelligentObject createSink(String name, int x, int y, int z)

@@ -34,9 +34,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EPPlus, Version=4.5.2.1, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.5.2.1\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>..\Librerias Simio\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="Simio.resources">
       <HintPath>..\Librerias Simio\Simio.resources.dll</HintPath>
     </Reference>
@@ -62,7 +66,9 @@
       <HintPath>..\Librerias Simio\SimioTypes.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -84,6 +90,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SIMIO\AirPort.cs" />
     <Compile Include="SIMIO\Main.cs" />
+    <Compile Include="SIMIO\Readxlsx.cs" />
     <Compile Include="SIMIO\SimioFile.cs" />
     <Compile Include="SIMIO\ReadCsv.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -99,6 +106,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
