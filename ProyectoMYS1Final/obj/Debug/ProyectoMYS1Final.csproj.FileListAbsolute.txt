@@ -1,0 +1,41 @@
+F:\ProyectoMYS1Final\ProyectoMYS1Final\obj\Debug\ProyectoMYS1Final.csprojAssemblyReference.cache
+F:\ProyectoMYS1Final\ProyectoMYS1Final\obj\Debug\ProyectoMYS1Final.Form1.resources
+F:\ProyectoMYS1Final\ProyectoMYS1Final\obj\Debug\ProyectoMYS1Final.Properties.Resources.resources
+F:\ProyectoMYS1Final\ProyectoMYS1Final\obj\Debug\ProyectoMYS1Final.csproj.GenerateResource.cache
+F:\ProyectoMYS1Final\ProyectoMYS1Final\obj\Debug\ProyectoMYS1Final.csproj.CoreCompileInputs.cache
+F:\ProyectoMYS1Final\ProyectoMYS1Final\bin\Debug\ProyectoMYS1Final.exe.config
+F:\ProyectoMYS1Final\ProyectoMYS1Final\bin\Debug\ProyectoMYS1Final.exe
+F:\ProyectoMYS1Final\ProyectoMYS1Final\bin\Debug\ProyectoMYS1Final.pdb
+F:\ProyectoMYS1Final\ProyectoMYS1Final\bin\Debug\ICSharpCode.SharpZipLib.dll
+F:\ProyectoMYS1Final\ProyectoMYS1Final\bin\Debug\Simio.resources.dll
+F:\ProyectoMYS1Final\ProyectoMYS1Final\bin\Debug\SimioAPI.dll
+F:\ProyectoMYS1Final\ProyectoMYS1Final\bin\Debug\SimioAPI.Extensions.dll
+F:\ProyectoMYS1Final\ProyectoMYS1Final\bin\Debug\SimioAPI.Graphics.dll
+F:\ProyectoMYS1Final\ProyectoMYS1Final\bin\Debug\SimioDLL.dll
+F:\ProyectoMYS1Final\ProyectoMYS1Final\bin\Debug\SimioEnums.dll
+F:\ProyectoMYS1Final\ProyectoMYS1Final\bin\Debug\SimioReplicationRunnerContracts.dll
+F:\ProyectoMYS1Final\ProyectoMYS1Final\bin\Debug\SimioTypes.dll
+F:\ProyectoMYS1Final\ProyectoMYS1Final\obj\Debug\ProyectoMYS1Final.csproj.CopyComplete
+F:\ProyectoMYS1Final\ProyectoMYS1Final\obj\Debug\ProyectoMYS1Final.exe
+F:\ProyectoMYS1Final\ProyectoMYS1Final\obj\Debug\ProyectoMYS1Final.pdb
+D:\USAC\MODELA 1\LAB\MYS1ProjecUnique\ProyectoMYS1Final\bin\Debug\ProyectoMYS1Final.exe.config
+D:\USAC\MODELA 1\LAB\MYS1ProjecUnique\ProyectoMYS1Final\bin\Debug\ProyectoMYS1Final.exe
+D:\USAC\MODELA 1\LAB\MYS1ProjecUnique\ProyectoMYS1Final\bin\Debug\ProyectoMYS1Final.pdb
+D:\USAC\MODELA 1\LAB\MYS1ProjecUnique\ProyectoMYS1Final\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\USAC\MODELA 1\LAB\MYS1ProjecUnique\ProyectoMYS1Final\bin\Debug\Simio.resources.dll
+D:\USAC\MODELA 1\LAB\MYS1ProjecUnique\ProyectoMYS1Final\bin\Debug\SimioAPI.dll
+D:\USAC\MODELA 1\LAB\MYS1ProjecUnique\ProyectoMYS1Final\bin\Debug\SimioAPI.Extensions.dll
+D:\USAC\MODELA 1\LAB\MYS1ProjecUnique\ProyectoMYS1Final\bin\Debug\SimioAPI.Graphics.dll
+D:\USAC\MODELA 1\LAB\MYS1ProjecUnique\ProyectoMYS1Final\bin\Debug\SimioDLL.dll
+D:\USAC\MODELA 1\LAB\MYS1ProjecUnique\ProyectoMYS1Final\bin\Debug\SimioEnums.dll
+D:\USAC\MODELA 1\LAB\MYS1ProjecUnique\ProyectoMYS1Final\bin\Debug\SimioReplicationRunnerContracts.dll
+D:\USAC\MODELA 1\LAB\MYS1ProjecUnique\ProyectoMYS1Final\bin\Debug\SimioTypes.dll
+D:\USAC\MODELA 1\LAB\MYS1ProjecUnique\ProyectoMYS1Final\obj\Debug\ProyectoMYS1Final.csprojResolveAssemblyReference.cache
+D:\USAC\MODELA 1\LAB\MYS1ProjecUnique\ProyectoMYS1Final\obj\Debug\ProyectoMYS1Final.Form1.resources
+D:\USAC\MODELA 1\LAB\MYS1ProjecUnique\ProyectoMYS1Final\obj\Debug\ProyectoMYS1Final.Properties.Resources.resources
+D:\USAC\MODELA 1\LAB\MYS1ProjecUnique\ProyectoMYS1Final\obj\Debug\ProyectoMYS1Final.csproj.GenerateResource.cache
+D:\USAC\MODELA 1\LAB\MYS1ProjecUnique\ProyectoMYS1Final\obj\Debug\ProyectoMYS1Final.csproj.CoreCompileInputs.cache
+D:\USAC\MODELA 1\LAB\MYS1ProjecUnique\ProyectoMYS1Final\obj\Debug\ProyectoMYS1Final.csproj.CopyComplete
+D:\USAC\MODELA 1\LAB\MYS1ProjecUnique\ProyectoMYS1Final\obj\Debug\ProyectoMYS1Final.exe
+D:\USAC\MODELA 1\LAB\MYS1ProjecUnique\ProyectoMYS1Final\obj\Debug\ProyectoMYS1Final.pdb
+D:\USAC\MODELA 1\LAB\MYS1ProjecUnique\ProyectoMYS1Final\obj\Debug\ProyectoMYS1Final.CSVview.resources
