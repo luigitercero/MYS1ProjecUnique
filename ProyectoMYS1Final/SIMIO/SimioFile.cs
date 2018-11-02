@@ -54,6 +54,11 @@ namespace ProyectoMYS1Final.SIMIO
             return this.getObjectList().CreateLink("Connector", airplane, parent, null);
         }
 
+        internal IIntelligentObject addPath(INodeObject inicio, INodeObject fin, IEnumerable<FacilityLocation> points)
+        {
+            return this.getObjectList().CreateLink("Path", inicio, fin, points);
+        }
+
         public IIntelligentObject createSource(String name, int x, int y, int z)
         {
             return createObject("Source", name, x, y, z);
@@ -85,8 +90,14 @@ namespace ProyectoMYS1Final.SIMIO
             return node;
         }
 
+        public INodeObject getIpunt(IIntelligentObject _objcect)
+        {
+            INodeObject node = seekForName("Input@" + _objcect.ObjectName) as INodeObject;
+            return node;
+        }
 
-        private IIntelligentObject seekForName(String name)
+
+        public IIntelligentObject seekForName(String name)
         {
             //IIntelligentObject entity = null;
             IIntelligentObjects list = model.Facility.IntelligentObjects;

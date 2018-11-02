@@ -16,7 +16,10 @@ namespace ProyectoMYS1Final
     public partial class Form1 : Form
     {
 
-
+        //static String ruta_airports= "D:\\USAC\\MODELA 1\\LAB\\MYS1ProjecUnique\\Aeropuertos.csv";
+        //static String ruta_vuelos = "D:\\USAC\\MODELA 1\\LAB\\MYS1ProjecUnique\\Rutas.csv";
+        public static String ruta_airports = "";
+        public static String ruta_vuelos = "";
         static ISimioProject _simioproyecto;
         String _rutaBase = Application.StartupPath + "/SimioModel.spfx";
         String _rutaSalida = Application.StartupPath + "/final/SimioShow.spfx";
@@ -89,22 +92,67 @@ namespace ProyectoMYS1Final
                 {
                     //Get the path of specified file
                     filePath = openFileDialog.FileName;
-
-                    //Read the contents of the file into a stream
-                    var fileStream = openFileDialog.OpenFile();
-
-                    using (StreamReader reader = new StreamReader(fileStream))
+                    CSVview preview = new CSVview(filePath,1);
+                    preview.ShowDialog();
+                    if (ruta_airports == "")
                     {
-                        fileContent = reader.ReadToEnd();
+                        label1.Text = "no seleccionado";
+                    }
+                    else
+                    {
+                        label1.Text = ruta_airports;
+                    }
+
+                }
+            }
+            //ReadCsv read = new ReadCsv();
+            //MessageBox.Show(fileContent, "File Content at path: " + filePath, MessageBoxButtons.OK);
+
+            //Main main = new Main();
+
+            //main.start(filePath);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var fileContent = string.Empty;
+            var filePath = string.Empty;
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "c:\\";
+                openFileDialog.Filter = "csv fieles(*.csv)|*.csv|txt files (*.txt)|*.txt|All files (*.*)|*.*";
+                openFileDialog.FilterIndex = 1;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    filePath = openFileDialog.FileName;
+                    CSVview preview = new CSVview(filePath,2);
+                    preview.ShowDialog();
+                    if (ruta_vuelos == "")
+                    {
+                        label2.Text = "no seleccionado";
+                    }
+                    else
+                    {
+                        label2.Text = ruta_vuelos;
                     }
                 }
             }
             //ReadCsv read = new ReadCsv();
             //MessageBox.Show(fileContent, "File Content at path: " + filePath, MessageBoxButtons.OK);
 
-            Main main = new Main();
+            //Main main = new Main();
 
-            main.start(filePath);
+            //main.start(filePath);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Main main = new Main();
+            main.start(ruta_airports,ruta_vuelos);
         }
     }
 }
