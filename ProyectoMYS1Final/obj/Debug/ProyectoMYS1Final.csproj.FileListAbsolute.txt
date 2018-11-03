@@ -41,3 +41,6 @@ C:\Users\C45ASP4311F\Desktop\modela\MYS1ProjecUnique\ProyectoMYS1Final\obj\Debug
 C:\Users\C45ASP4311F\Desktop\modela\MYS1ProjecUnique\ProyectoMYS1Final\bin\Debug\EPPlus.dll
 C:\Users\C45ASP4311F\Desktop\modela\MYS1ProjecUnique\ProyectoMYS1Final\bin\Debug\EPPlus.xml
 C:\Users\C45ASP4311F\Desktop\modela\MYS1ProjecUnique\ProyectoMYS1Final\obj\Debug\ProyectoMYS1Final.CSVview.resources
+F:\ProyectoMYS1Final\ProyectoMYS1Final\bin\Debug\EPPlus.dll
+F:\ProyectoMYS1Final\ProyectoMYS1Final\bin\Debug\EPPlus.xml
+F:\ProyectoMYS1Final\ProyectoMYS1Final\obj\Debug\ProyectoMYS1Final.CSVview.resources

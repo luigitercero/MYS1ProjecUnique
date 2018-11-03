@@ -49,6 +49,8 @@ namespace ProyectoMYS1Final.SIMIO
             IIntelligentObject combiner = createObject("Combiner", name, x, y, z);
             combiner.Properties["MemberEnteredAddOnProcess"].Value = "EscribirBitacora";
             combiner.Properties["ParentEnteredAddOnProcess"].Value = "TotalAviones";
+            combiner.Properties["BatchQuantity"].Value = "100";
+            
             return combiner;
         }
 

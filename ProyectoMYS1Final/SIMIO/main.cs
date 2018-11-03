@@ -28,6 +28,8 @@ namespace ProyectoMYS1Final.SIMIO
             line = read.getline();
             
             IIntelligentObject airplane = simio.createSource("airplane", 0, 0, 0);
+           // airplane.Properties["EntityType"].Value = "airplane";
+            airplane.Properties["InterarrivalTime"].Value = "Random.Poisson(0.2)";
             IIntelligentObject person = simio.createSource("person", 2, 0, 0);
             airplaneOutput = simio.getNodeOutput(airplane);
             personOutput = simio.getNodeOutput(person);
@@ -52,14 +54,33 @@ namespace ProyectoMYS1Final.SIMIO
                 line_r = read.getline();
             }
 
+           
             //creando el experimento
             IExperiment experiment = simio.createExperiment("Experimento");
             simio.addScenarios(experiment);
             simio.addTiempos(experiment);
-            simio.addResponses(experiment, cadenaResponse1);
+            //simio.addResponses(experiment, cadenaResponse1);
 
-            experiment.RunAsync();
+            experiment.Responses.Create("Response1");
+            experiment.Responses[0].Expression = cadenaResponse1;
+            experiment.Responses.Create("Response2");
+
+            IExperiment experiment2 = simio.model.Experiments[0];
+                    //experiment.res
+                    experiment.RunCompleted += new EventHandler<RunCompletedEventArgs>(experiment_RunCompleted);                    
+                    experiment2.RunAsync();
+
+            //experiment.RunAsync();
             simio.saveFile();
+        }
+
+        private void experiment_RunCompleted(object sender, RunCompletedEventArgs e)
+        {
+
+            IExperiment exper = (IExperiment)sender;
+            System.Windows.Forms.MessageBox.Show((exper.Scenarios[0].ResponseValues["Response1"].ToString()));
+            System.Windows.Forms.MessageBox.Show((exper.Scenarios[0].ResponseValues["Response2"].ToString()));
+            Console.WriteLine(exper.Scenarios[0].ResponseValues["Response1"].ToString());
         }
 
         private void createRuta(String[] line)
@@ -79,6 +100,7 @@ namespace ProyectoMYS1Final.SIMIO
         {
 
             IIntelligentObject _object = simio.createCombiner(line[1], Int16.Parse(line[2]), Int16.Parse(line[3]), Int16.Parse(line[4]));
+            
             this.ariport.Add(Int16.Parse(line[0]), _object);
             INodeObject parent = this.simio.getParentIpunt(_object);
             INodeObject member = this.simio.getMemberIpunt(_object);
