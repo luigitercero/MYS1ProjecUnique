@@ -12,10 +12,11 @@ namespace ProyectoMYS1Final.SIMIO
         private SimioFile simio;
         ReadCsv read;
         Dictionary <int,IIntelligentObject> ariport;
+        String cadenaResponse1;
         
         public Main() {
             ariport = new Dictionary<int, IIntelligentObject>();
-
+            cadenaResponse1 = "";
         }
 
         internal void start(string filePath_air, string filePath_rut)
@@ -31,6 +32,9 @@ namespace ProyectoMYS1Final.SIMIO
             airplaneOutput = simio.getNodeOutput(airplane);
             personOutput = simio.getNodeOutput(person);
             simio.createSink("salida", 1, 1, 1);
+
+            //creacion de Referenced Property para los escenarios del experimento
+            IPropertyDefinition propiedadEscenarios = simio.createProperty();
 
             while (line != null) {
                 createAirPort(line, airplaneOutput, personOutput);
@@ -48,8 +52,16 @@ namespace ProyectoMYS1Final.SIMIO
                 line_r = read.getline();
             }
 
+            //creando el experimento
+            IExperiment experiment = simio.createExperiment("Experimento");
+            simio.addScenarios(experiment);
+            simio.addTiempos(experiment);
+            simio.addResponses(experiment, cadenaResponse1);
+
+            experiment.RunAsync();
             simio.saveFile();
         }
+
         private void createRuta(String[] line)
         {
             //encontrar los nodos
@@ -73,8 +85,16 @@ namespace ProyectoMYS1Final.SIMIO
             simio.addConnector(airplane, parent, null);
             simio.addConnector(person, member, null);
             simio.addFailure(_object, line[5]);
+            simio.addProperty(_object);
             simio.createSink(line[1] + "sink", Int16.Parse(line[2]), Int16.Parse(line[3]), Int16.Parse(line[4]));
-
+            if (cadenaResponse1 != "")
+            {
+                cadenaResponse1 += " + " + line[1] + "sink.InputBuffer.NumberEntered";
+            }
+            else
+            {
+                cadenaResponse1 = line[1] + "sink.InputBuffer.NumberEntered";
+            }
         }
         private void createBase(INodeObject airplaneOutput, INodeObject personOutput) {
             IIntelligentObject airplane = simio.createSource("airplane", 0, 0, 0);

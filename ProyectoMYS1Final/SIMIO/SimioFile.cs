@@ -48,6 +48,7 @@ namespace ProyectoMYS1Final.SIMIO
         {
             IIntelligentObject combiner = createObject("Combiner", name, x, y, z);
             combiner.Properties["MemberEnteredAddOnProcess"].Value = "EscribirBitacora";
+            combiner.Properties["ParentEnteredAddOnProcess"].Value = "TotalAviones";
             return combiner;
         }
 
@@ -118,5 +119,62 @@ namespace ProyectoMYS1Final.SIMIO
             _object.Properties["FailureType"].Value = nameFail;
         }
 
+        public IPropertyDefinition createProperty()
+        {
+            IPropertyDefinition property = this.model.PropertyDefinitions.AddExpressionProperty("tiempoProceso", "1");
+            return property;
+        }
+
+        public void addProperty(IIntelligentObject _object)
+        {
+            _object.Properties["ProcessingTime"].Value = "tiempoProceso";
+        }
+
+        public IExperiment createExperiment(String name)
+        {
+            IExperiment experiment = model.Experiments.Create(name);
+
+            // Setup the experiment (optional)
+            // Specify run times.
+            IRunSetup setup = experiment.RunSetup;
+            setup.StartingTime = new DateTime(2018, 10, 03);
+            setup.WarmupPeriod = TimeSpan.FromHours(0);
+            setup.EndingTime = experiment.RunSetup.StartingTime + TimeSpan.FromDays(1);
+            experiment.ConfidenceLevel = ExperimentConfidenceLevelType.Point95;
+            experiment.LowerPercentile = 25;
+            experiment.UpperPercentile = 85;
+
+            // Add event handler for events from experiment
+            //experiment.ScenarioEnded += new EventHandler<ScenarioEndedEventArgs>(experiment_ScenarioEnded);
+            //experiment.RunCompleted += new EventHandler<RunCompletedEventArgs>(experiment_RunCompleted);
+            //experiment.RunProgressChanged += new EventHandler<RunProgressChangedEventArgs>(experiment_RunProgressChanged);
+            //experiment.ReplicationEnded += new EventHandler<ReplicationEndedEventArgs>(experiment_ReplicationEnded);
+            
+            return experiment;
+        }
+
+        public void addScenarios(IExperiment experimento)
+        {
+            experimento.Scenarios.Create("Scenario2");
+            experimento.Scenarios.Create("Scenario3");
+        }
+
+        public void addTiempos(IExperiment experimento)
+        {
+            IExperimentControl experimentControl = experimento.Controls[0];
+            experimento.Scenarios[0].SetControlValue(experimentControl, "Random.Triangular(35,45,60)");
+            experimento.Scenarios[0].ReplicationsRequired = 1;
+            experimento.Scenarios[1].SetControlValue(experimentControl, "Random.Triangular(30,40,50)");
+            experimento.Scenarios[1].ReplicationsRequired = 1;
+            experimento.Scenarios[2].SetControlValue(experimentControl, "Random.Uniform(30,50)");
+            experimento.Scenarios[2].ReplicationsRequired = 1;
+        }
+
+        public void addResponses(IExperiment experimento, String response1)
+        {
+            experimento.Responses.Create("Response1");
+            experimento.Responses[0].Expression = response1;
+            experimento.Responses.Create("Response2");
+        }
     }
 }
