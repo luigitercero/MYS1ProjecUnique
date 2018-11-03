@@ -4,8 +4,6 @@ ProyectoMYS1Final\bin\Debug\final\*
 ProyectoMYS1Final\bin\Debug\*.dll
 /ProyectoMYS1Final/bin/Debug/*
 ProyectoMYS1Final/[Bb]in/*
-
-ProyectoMYS1Final/[Oo]bj/
 .vs/*
 
 ## Ignore Visual Studio temporary files, build results, and
@@ -148,12 +146,12 @@ _TeamCity*
 *.coveragexml
 
 # NCrunch
-_NCrunch_*
-.*crunch*.local.xml
+NCrunch*
+.crunch.local.xml
 nCrunchTemp_*
 
 # MightyMoose
-*.mm.*
+.mm.
 AutoTest.Net/
 
 # Web workbench (sass)
@@ -191,7 +189,7 @@ PublishScripts/
 # NuGet Packages
 *.nupkg
 # The packages folder can be ignored because of Package Restore
-**/[Pp]ackages/*
+*/[Pp]ackages/
 # except build/, which is used as an MSBuild target.
 !**/[Pp]ackages/build/
 # Uncomment if necessary however generally it will be regenerated when needed
@@ -261,7 +259,7 @@ ServiceFabricBackup/
 # Business Intelligence projects
 *.rdl.data
 *.bim.layout
-*.bim_*.settings
+.bim_.settings
 *.rptproj.rsuser
 
 # Microsoft Fakes
@@ -286,11 +284,11 @@ node_modules/
 *.vbw
 
 # Visual Studio LightSwitch build output
-**/*.HTMLClient/GeneratedArtifacts
-**/*.DesktopClient/GeneratedArtifacts
-**/*.DesktopClient/ModelManifest.xml
-**/*.Server/GeneratedArtifacts
-**/*.Server/ModelManifest.xml
+*/.HTMLClient/GeneratedArtifacts
+*/.DesktopClient/GeneratedArtifacts
+*/.DesktopClient/ModelManifest.xml
+*/.Server/GeneratedArtifacts
+*/.Server/ModelManifest.xml
 _Pvt_Extensions
 
 # Paket dependency manager
@@ -308,7 +306,7 @@ paket-files/
 .cr/personal
 
 # Python Tools for Visual Studio (PTVS)
-__pycache__/
+_pycache_/
 *.pyc
 
 # Cake - Uncomment if you are using it
@@ -344,4 +342,3 @@ ASALocalRun/
 
 # Local History for Visual Studio
 .localhistory/
-
